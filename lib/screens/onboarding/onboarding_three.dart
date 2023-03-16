@@ -1,4 +1,7 @@
+import 'package:ecom/screens/registration/reg_one.dart';
 import 'package:ecom/screens/splash/splash.dart';
+import 'package:ecom/utilities/color.dart';
+import 'package:ecom/widgets/long_button.dart';
 import 'package:flutter/material.dart';
 
 class OnboardScreenThree extends StatefulWidget {
@@ -40,7 +43,10 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
             child: Text(
               "Free shipping and concierge services. ",
               textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
+              style: TextStyle(
+                  color: neutralBlackText,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 32),
             ),
           ),
           const SizedBox(height: 16),
@@ -55,33 +61,13 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
           const SizedBox(height: 70),
 
           // Button
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Intro(),
-                  ));
-            },
-            child: Container(
-              height: 48,
-              width: 342,
-              decoration: BoxDecoration(
-                  color: const Color.fromRGBO(54, 57, 57, 1),
-                  borderRadius: BorderRadius.circular(6)),
-              child: const Padding(
-                padding: EdgeInsets.only(top: 16, bottom: 16),
-                child: Text(
-                  "Next",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16),
-                ),
-              ),
-            ),
-          ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Longbutton(
+                text: 'Next',
+                color: lightDarkBlue,
+                screenToNavigateTo: RegistrationFirstPage()),
+        ),
         ],
       )),
     );

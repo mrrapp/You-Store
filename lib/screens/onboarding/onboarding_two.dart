@@ -1,5 +1,8 @@
 import 'package:ecom/screens/onboarding/onboarding_three.dart';
+import 'package:ecom/widgets/long_button.dart';
 import 'package:flutter/material.dart';
+
+import '../../utilities/color.dart';
 
 class OnboardScreenTwo extends StatefulWidget {
   const OnboardScreenTwo({super.key});
@@ -46,37 +49,20 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
             child: Text(
               'Tell us what you like. No, really, it helps a bunch when we serve you some great products. You just keep doing your thing.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+              style: TextStyle(
+                  color: neutralBlackText,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16),
             ),
           ),
           const SizedBox(height: 70),
           //Next Button
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const OnboardScreenThree(),
-                  ));
-            },
-            child: Container(
-              height: 48,
-              width: 342,
-              decoration: BoxDecoration(
-                  color: const Color.fromRGBO(54, 57, 57, 1),
-                  borderRadius: BorderRadius.circular(6)),
-              child: const Padding(
-                padding: EdgeInsets.only(top: 16, bottom: 16),
-                child: Text(
-                  "Next",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16),
-                ),
-              ),
-            ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            child: Longbutton(
+                text: 'Next',
+                color: lightDarkBlue,
+                screenToNavigateTo: OnboardScreenThree()),
           ),
         ],
       )),

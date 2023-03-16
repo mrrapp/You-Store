@@ -2,6 +2,8 @@ import 'package:ecom/screens/onboarding/onboarding_one.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../utilities/color.dart';
+
 class Intro extends StatefulWidget {
   const Intro({super.key});
 
@@ -55,7 +57,7 @@ class _IntroState extends State<Intro> {
                 height: 48,
                 width: 342,
                 decoration: BoxDecoration(
-                    color: const Color.fromRGBO(255, 227, 147, 1),
+                    color: lightYellow,
                     borderRadius: BorderRadius.circular(6)),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 16, bottom: 16),
