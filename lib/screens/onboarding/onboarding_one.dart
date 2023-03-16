@@ -1,5 +1,5 @@
 import 'package:ecom/screens/onboarding/onboarding_two.dart';
-import 'package:ecom/screens/splash/splash.dart';
+
 import 'package:ecom/widgets/long_button.dart';
 import 'package:flutter/material.dart';
 

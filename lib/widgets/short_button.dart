@@ -5,12 +5,11 @@ class ShortButton extends StatelessWidget {
       {super.key,
       required this.text,
       required this.color,
-      
       required this.pageToNavigateTo,
       this.buttonIcon});
   final String? text;
   final Color? color;
-  
+
   final Widget? pageToNavigateTo;
   final IconData? buttonIcon;
   @override
@@ -34,10 +33,10 @@ class ShortButton extends StatelessWidget {
               //  crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'Upload my photo',
+                Text(
+                  text!,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 16),

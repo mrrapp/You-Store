@@ -34,7 +34,7 @@ class _IntroState extends State<Intro> {
               textAlign: TextAlign.center,
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
             ),
-            const SizedBox(height: 200),
+            const SizedBox(height: 150),
 
             //   Image.asset(
             //   'assets/images/tv.png',
@@ -53,24 +53,27 @@ class _IntroState extends State<Intro> {
                       builder: (context) => const OnboardScreenOne(),
                     ));
               },
-              child: Container(
-                height: 48,
-                width: 342,
-                decoration: BoxDecoration(
-                    color: lightYellow,
-                    borderRadius: BorderRadius.circular(6)),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 16, bottom: 16),
-                  child: Text(
-                    "Let's begin",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.lora(
-                        fontWeight: FontWeight.w500, fontSize: 16),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Container(
+                  height: 48,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: lightYellow,
+                      borderRadius: BorderRadius.circular(6)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 16, bottom: 16),
+                    child: Text(
+                      "Let's begin",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.lora(
+                          fontWeight: FontWeight.w500, fontSize: 16),
+                    ),
                   ),
                 ),
               ),
             ),
-            //SizedBox(height: 16),
+            const SizedBox(height: 16),
 
             // already have an account
             Text(

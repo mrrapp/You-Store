@@ -61,13 +61,13 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
           const SizedBox(height: 70),
 
           // Button
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          child: Longbutton(
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            child: Longbutton(
                 text: 'Next',
                 color: lightDarkBlue,
                 screenToNavigateTo: RegistrationFirstPage()),
-        ),
+          ),
         ],
       )),
     );

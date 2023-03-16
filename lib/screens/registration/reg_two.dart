@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../utilities/color.dart';
 import '../../widgets/short_button.dart';
 import '../splash/splash.dart';
+import 'reg_three.dart';
 
 class SecondRegistrationPage extends StatefulWidget {
   const SecondRegistrationPage({super.key});
@@ -123,12 +124,12 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
                         color: neutralBlackText),
                   ),
 
-                  // Upload Photo Button
+                  // Continue Button
                   ShortButton(
-                      text: 'Continue',
+                      text: 'Continugit',
                       color: lightDarkBlue,
                       buttonIcon: Icons.arrow_right,
-                      pageToNavigateTo: SecondRegistrationPage()),
+                      pageToNavigateTo: ThirdRegistrationPAge()),
                 ],
               ),
             )
