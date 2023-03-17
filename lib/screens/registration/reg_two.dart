@@ -126,7 +126,7 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
 
                   // Continue Button
                   ShortButton(
-                      text: 'Continugit',
+                      text: 'Continue',
                       color: lightDarkBlue,
                       buttonIcon: Icons.arrow_right,
                       pageToNavigateTo: ThirdRegistrationPAge()),
