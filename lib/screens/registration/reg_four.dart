@@ -4,6 +4,7 @@ import '../../utilities/color.dart';
 import '../../widgets/interest_checkbox.dart';
 import '../../widgets/short_button.dart';
 import '../splash/splash.dart';
+import 'reg_complete.dart';
 
 class FourthRegistrationPage extends StatefulWidget {
   const FourthRegistrationPage({super.key});
@@ -222,7 +223,7 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
 // Bottom Section
             Padding(
               padding: const EdgeInsets.only(
-                  left: 24.0, right: 24.0, top: 300.0, bottom: 55),
+                  left: 24.0, right: 24.0, top: 56.0, bottom: 55),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -241,7 +242,7 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
                       text: 'Continue',
                       color: lightDarkBlue,
                       buttonIcon: Icons.arrow_right,
-                      pageToNavigateTo: FourthRegistrationPage()),
+                      pageToNavigateTo: RegistrationCompleted()),
                 ],
               ),
             )

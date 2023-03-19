@@ -1,0 +1,100 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../utilities/color.dart';
+
+import '../onboarding/onboarding_one.dart';
+
+class RegistrationCompleted extends StatefulWidget {
+  const RegistrationCompleted({super.key});
+
+  @override
+  State<RegistrationCompleted> createState() => _RegistrationCompletedState();
+}
+
+class _RegistrationCompletedState extends State<RegistrationCompleted> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 10),
+            //Pictures
+            Image.asset(
+              'assets/images/Layer_Blur.png',
+            ),
+
+            // Welcome text
+            //
+            const Text(
+              'Woohoo!',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
+            ),
+            const SizedBox(height: 12),
+            const Text(
+              'Registration complete! Get ready to have the best shopping experiences of your life.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: neutralBlackText,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400),
+            ),
+            const SizedBox(height: 150),
+
+            //   Image.asset(
+            //   'assets/images/tv.png',
+            // ),
+
+            Image.asset(
+              'assets/images/head_phon.png',
+            ),
+
+            //button
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnboardScreenOne(),
+                    ));
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Container(
+                  height: 48,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: lightYellow,
+                      borderRadius: BorderRadius.circular(6)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 16, bottom: 16),
+                    child: Text(
+                      "Let the shopping begin!",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.lora(
+                          fontWeight: FontWeight.w500, fontSize: 16),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+
+            // already have an account
+            // Text(
+            //   'Let the shopping begin!',
+            //   textAlign: TextAlign.center,
+            //   style:
+            //       GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 14),
+            // )
+          ],
+        ),
+      )),
+    );
+  }
+}

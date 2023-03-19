@@ -65,7 +65,7 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
             padding: EdgeInsets.symmetric(horizontal: 24.0),
             child: Longbutton(
                 text: 'Next',
-                color: lightDarkBlue,
+                color: lightYellow,
                 screenToNavigateTo: RegistrationFirstPage()),
           ),
         ],

@@ -1,3 +1,4 @@
+import 'package:ecom/utilities/color.dart';
 import 'package:flutter/material.dart';
 
 class Longbutton extends StatelessWidget {
@@ -9,6 +10,7 @@ class Longbutton extends StatelessWidget {
 
   final String? text;
   final Color? color;
+
   final Widget? screenToNavigateTo;
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,9 @@ class Longbutton extends StatelessWidget {
             text!,
             textAlign: TextAlign.center,
             style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w500, fontSize: 16),
+                color: neutralBlackText,
+                fontWeight: FontWeight.w500,
+                fontSize: 16),
           ),
         ),
       ),
