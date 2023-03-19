@@ -24,30 +24,52 @@ class _RegistrationFirstPageState extends State<RegistrationFirstPage> {
             // Row with step 1 and personalization
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
                 children: [
-                  // step 1
-                  const Text(
-                    'Step 1: Personalization',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
-                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Step 2: Your Goals
+                      const Text(
+                        'Step 1: Personalization ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 14),
+                      ),
 
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Intro(),
-                          ));
-                    },
-                    child: const Text(
-                      'Exit',
-                      style: TextStyle(
-                          color: neutralBlackText,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14),
-                    ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Intro(),
+                              ));
+                        },
+                        child: const Text(
+                          'Exit',
+                          style: TextStyle(
+                              color: neutralBlackText,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14),
+                        ),
+                      )
+                    ],
+                  ),
+                  // Progress Bar
+                  const SizedBox(height: 10),
+                  Stack(
+                    children: const [
+                      // light progress line
+                      Divider(
+                        thickness: 4,
+                        color: Color.fromRGBO(234, 234, 234, 1),
+                      ),
+                      // Dark progress line
+                      Divider(
+                        thickness: 4,
+                        color: blackDarkText,
+                        endIndent: 350,
+                      ),
+                    ],
                   )
                 ],
               ),
