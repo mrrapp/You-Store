@@ -17,8 +17,9 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
     return Scaffold(
       body: SafeArea(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(height: 48),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
@@ -58,7 +59,7 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
           const SizedBox(height: 70),
           //Next Button
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
             child: Longbutton(
                 text: 'Next',
                 color: lightDarkBlue,

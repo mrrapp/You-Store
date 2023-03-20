@@ -18,8 +18,9 @@ class _OnboardScreenOneState extends State<OnboardScreenOne> {
     return Scaffold(
       body: SafeArea(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(height: 48),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Row(
@@ -56,7 +57,7 @@ results again?""",
 
           //Next Button
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
+            padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
             child: Longbutton(
               color: lightDarkBlue,
               text: 'Next',

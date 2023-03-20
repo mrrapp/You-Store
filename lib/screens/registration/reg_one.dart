@@ -17,14 +17,16 @@ class _RegistrationFirstPageState extends State<RegistrationFirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const SizedBox(height: 16),
             // Row with step 1 and personalization
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Column(
+              child:
+                  // Title and progress bar
+                  Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,57 +77,61 @@ class _RegistrationFirstPageState extends State<RegistrationFirstPage> {
               ),
             ),
 
-            // progress bar
             const SizedBox(height: 40),
-
-            //Big add photo text
-            const Text(
-              'Add a photo.',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
-            ),
-            const SizedBox(height: 16),
-            // small text sentence
-            const Text(
-              """Add a photo so other members 
+// Column for body
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //Big add photo text
+                const Text(
+                  'Add a photo.',
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+                ),
+                const SizedBox(height: 16),
+                // small text sentence
+                const Text(
+                  """Add a photo so other members 
 know who you are.""",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: neutralBlackText,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14),
-            ),
-            const SizedBox(height: 40),
-            // Photo icon
-            Image.asset('assets/images/user_icon.png'),
-            // Bottom Row
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: neutralBlackText,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14),
+                ),
+                const SizedBox(height: 40),
+                // Photo icon
+                Image.asset('assets/images/user_icon.png'),
+                // Bottom Row
 
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 24.0, right: 24.0, top: 450.0, bottom: 55),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  // Skip text
-                  Text(
-                    'Skip',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: neutralBlackText),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 24.0, right: 24.0, top: 0.0, bottom: 55),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      // Skip text
+                      Text(
+                        'Skip',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: neutralBlackText),
+                      ),
+
+                      // Upload Photo Button
+                      ShortButton(
+                          text: 'Upload photo',
+                          color: lightDarkBlue,
+                          pageToNavigateTo: SecondRegistrationPage()),
+                    ],
                   ),
-
-                  // Upload Photo Button
-                  ShortButton(
-                      text: 'Upload photo',
-                      color: lightDarkBlue,
-                      pageToNavigateTo: SecondRegistrationPage()),
-                ],
-              ),
+                )
+              ],
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

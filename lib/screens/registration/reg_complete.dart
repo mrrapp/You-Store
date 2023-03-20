@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../utilities/color.dart';
 
-import '../onboarding/onboarding_one.dart';
+import '../home/home_member.dart';
 
 class RegistrationCompleted extends StatefulWidget {
   const RegistrationCompleted({super.key});
@@ -17,10 +17,8 @@ class _RegistrationCompletedState extends State<RegistrationCompleted> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(height: 10),
             //Pictures
@@ -60,11 +58,12 @@ class _RegistrationCompletedState extends State<RegistrationCompleted> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const OnboardScreenOne(),
+                      builder: (context) => const HomeMember(),
                     ));
               },
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding:
+                    const EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
                 child: Container(
                   height: 48,
                   width: double.infinity,
@@ -83,18 +82,9 @@ class _RegistrationCompletedState extends State<RegistrationCompleted> {
                 ),
               ),
             ),
-            const SizedBox(height: 16),
-
-            // already have an account
-            // Text(
-            //   'Let the shopping begin!',
-            //   textAlign: TextAlign.center,
-            //   style:
-            //       GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 14),
-            // )
           ],
         ),
-      )),
+      ),
     );
   }
 }

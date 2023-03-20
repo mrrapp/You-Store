@@ -16,75 +16,88 @@ class _IntroState extends State<Intro> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 10),
-            //Pictures
-            Image.asset(
-              'assets/images/Layer_Blur.png',
+            // Column for upper part
+            Column(
+              children: [
+                const SizedBox(height: 10),
+                //Pictures
+                Image.asset(
+                  'assets/images/Layer_Blur.png',
+                ),
+
+                // Welcome text
+                //
+                const Text(
+                  'Welcome to the world’s largest you store.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
+                ),
+                const SizedBox(height: 150),
+
+                //   Image.asset(
+                //   'assets/images/tv.png',
+                // ),
+
+                Image.asset(
+                  'assets/images/head_phon.png',
+                ),
+              ],
             ),
 
-            // Welcome text
-            //
-            const Text(
-              'Welcome to the world’s largest you store.',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
-            ),
-            const SizedBox(height: 150),
-
-            //   Image.asset(
-            //   'assets/images/tv.png',
-            // ),
-
-            Image.asset(
-              'assets/images/head_phon.png',
-            ),
-
-            //button
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const OnboardScreenOne(),
-                    ));
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Container(
-                  height: 48,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: lightYellow,
-                      borderRadius: BorderRadius.circular(6)),
+            // Column for button
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                //button
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const OnboardScreenOne(),
+                        ));
+                  },
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 16, bottom: 16),
-                    child: Text(
-                      "Let's begin",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.lora(
-                          fontWeight: FontWeight.w500, fontSize: 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    child: Container(
+                      height: 48,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: lightYellow,
+                          borderRadius: BorderRadius.circular(6)),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 16, bottom: 16),
+                        child: Text(
+                          "Let's begin",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.lora(
+                              fontWeight: FontWeight.w500, fontSize: 16),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-            const SizedBox(height: 16),
+                const SizedBox(height: 16),
 
-            // already have an account
-            Text(
-              'Already have an account?',
-              textAlign: TextAlign.center,
-              style:
-                  GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 14),
+                // already have an account
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 50.0),
+                  child: Text(
+                    'Already have an account?',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w600, fontSize: 14),
+                  ),
+                )
+              ],
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }
