@@ -36,7 +36,7 @@ class _IntroState extends State<Intro> {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
                 ),
-                const SizedBox(height: 150),
+                // const SizedBox(height: 150),
 
                 //   Image.asset(
                 //   'assets/images/tv.png',
