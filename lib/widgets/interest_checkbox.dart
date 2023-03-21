@@ -2,9 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../utilities/color.dart';
 
-class InterestCheckbox extends StatelessWidget {
-  const InterestCheckbox({super.key, required this.interest});
+class InterestCheckBox extends StatefulWidget {
+  const InterestCheckBox({super.key, required this.interest});
   final String interest;
+  @override
+  State<InterestCheckBox> createState() => _InterestCheckBoxState();
+}
+
+class _InterestCheckBoxState extends State<InterestCheckBox> {
+  bool interestSelected = false;
+  // check box was tapped
+  // void checkBoxTapped(bool? value) {
+  //   setState(() {
+  //     interestSelected = value!;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,21 +30,35 @@ class InterestCheckbox extends StatelessWidget {
         children: [
           // Interest name
           Text(
-            interest,
+            // life saver code line below
+            widget.interest,
             style: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
                 color: lightDarkBlue),
           ),
-          // Tick
-          Container(
-            width: 24,
-            height: 24,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(2),
-                border:
-                    Border.all(color: const Color.fromRGBO(210, 211, 211, 1))),
+
+          // functional checkbox
+          Checkbox(
+            value: interestSelected,
+            onChanged: (bool? value) {
+              setState(() {
+                interestSelected = value!;
+              });
+            },
+            checkColor: blackDarkText,
+            activeColor: Colors.grey.shade300,
           )
+
+          // Tick
+          // Container(
+          //   width: 24,
+          //   height: 24,
+          //   decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(2),
+          //       border:
+          //           Border.all(color: const Color.fromRGBO(210, 211, 211, 1))),
+          // )
         ],
       ),
     );

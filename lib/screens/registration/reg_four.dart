@@ -122,10 +122,11 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
                 ),
 
                 // Check list Music
-                InterestCheckbox(interest: 'Vinyl'),
-                InterestCheckbox(interest: 'Live Music'),
-                InterestCheckbox(interest: 'Hip Hop'),
-                InterestCheckbox(interest: 'Instruments'),
+
+                InterestCheckBox(interest: 'Vinyl'),
+                InterestCheckBox(interest: 'Live Music'),
+                InterestCheckBox(interest: 'Hip Hop'),
+                InterestCheckBox(interest: 'Instruments'),
                 Padding(
                   padding: EdgeInsets.only(top: 16.0, left: 24, right: 24),
                   child: Text(
@@ -163,10 +164,11 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
                 ),
 
                 // Check list Music
-                InterestCheckbox(interest: 'Sneakers'),
-                InterestCheckbox(interest: 'Glasses'),
-                InterestCheckbox(interest: 'Dresses'),
-                InterestCheckbox(interest: 'Minimalism'),
+
+                InterestCheckBox(interest: 'Sneakers'),
+                InterestCheckBox(interest: 'Glasses'),
+                InterestCheckBox(interest: 'Dresses'),
+                InterestCheckBox(interest: 'Minimalism'),
                 Padding(
                   padding: EdgeInsets.only(top: 16.0, left: 24, right: 24),
                   child: Text(
@@ -204,10 +206,11 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
                 ),
 
                 // Check list Music
-                InterestCheckbox(interest: 'Playstation'),
-                InterestCheckbox(interest: 'Xbox'),
-                InterestCheckbox(interest: 'PC'),
-                InterestCheckbox(interest: 'RPG\'s'),
+
+                InterestCheckBox(interest: 'Playastation'),
+                InterestCheckBox(interest: 'Xbox'),
+                InterestCheckBox(interest: 'PC'),
+                InterestCheckBox(interest: 'RPG\'s'),
                 Padding(
                   padding: EdgeInsets.only(top: 16.0, left: 24, right: 24),
                   child: Text(

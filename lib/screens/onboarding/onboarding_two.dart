@@ -56,7 +56,7 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
                   fontSize: 16),
             ),
           ),
-          const SizedBox(height: 70),
+          // const SizedBox(height: 70),
           //Next Button
           const Padding(
             padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),

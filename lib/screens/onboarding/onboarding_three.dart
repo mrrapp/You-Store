@@ -59,7 +59,7 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
             ),
           ),
-          const SizedBox(height: 70),
+          // const SizedBox(height: 70),
 
           // Button
           const Padding(
