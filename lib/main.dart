@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// import 'screens/onboarding/onboarding_one.dart';
-// import 'screens/onboarding/onboarding_three.dart';
-// import 'screens/onboarding/onboarding_two.dart';
 import 'screens/splash/splash.dart';
 
 void main() => runApp(const MyApp());
@@ -12,8 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Intro(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(390, 844),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) => const MaterialApp(
+              home: Intro(),
+            ));
   }
 }
