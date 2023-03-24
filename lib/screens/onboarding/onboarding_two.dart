@@ -1,6 +1,7 @@
 import 'package:ecom/screens/onboarding/onboarding_three.dart';
 import 'package:ecom/widgets/long_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utilities/color.dart';
 
@@ -17,61 +18,67 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-            child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
+        child: Padding(
+          padding: EdgeInsets.only(
+              left: 24.0.w, right: 24.w, top: 48.h, bottom: 56.h),
+          child: Column(
+            children: [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //icon
                   Image.asset('assets/images/black_shop_logo.png'),
                   const Text(
                     'Skip',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: neutralBlackText,
+                        fontFamily: 'Inter',
+                        fontSize: 14),
                   )
                 ],
               ),
-            ),
-            const SizedBox(height: 48),
-            //Image
-            Image.asset('assets/images/onboard_two.png'),
-            const SizedBox(height: 56),
-            //Text: Curated products by our professionals.
-            const Text(
-              "Curated products by our professionals.",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: 'Lora', fontWeight: FontWeight.w600, fontSize: 32),
-            ),
-            const SizedBox(height: 16),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Text(
-                'Tell us what you like. No, really, it helps a bunch when we serve you some great products. You just keep doing your thing.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: 'Inter',
-                    color: neutralBlackText,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16),
-              ),
-            ),
-            // const SizedBox(height: 70),
-            //Next Button
-            const Padding(
-              padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
-              child: Longbutton(
-                  text: 'Next',
-                  textColor: white,
-                  color: lightDarkBlue,
-                  screenToNavigateTo: OnboardScreenThree()),
-            ),
-                  ],
-                ),
-          )),
+
+              SizedBox(height: 56.h),
+              //Image
+              Image.asset('assets/images/onboard_two.png'),
+              SizedBox(height: 56.h),
+
+              //Text: Curated products by our professionals.
+              Column(
+                children: [
+                  Text(
+                    "Curated products by our professionals.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Lora',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 32.sp),
+                  ),
+                  SizedBox(height: 16.h),
+                  Text(
+                    'Tell us what you like. No, really, it helps a bunch when we serve you some great products. You just keep doing your thing.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Inter',
+                        color: neutralBlackText,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp),
+                  ),
+
+                  SizedBox(height: 46.h),
+                  //Next Button
+                  const Longbutton(
+                      text: 'Next',
+                      textColor: white,
+                      color: lightDarkBlue,
+                      screenToNavigateTo: OnboardScreenThree()),
+                ],
+              )
+            ],
+          ),
+        ),
+      )),
     );
   }
 }

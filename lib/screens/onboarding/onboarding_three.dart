@@ -1,5 +1,5 @@
 import 'package:ecom/screens/registration/reg_one.dart';
-import 'package:ecom/screens/splash/splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ecom/utilities/color.dart';
 import 'package:ecom/widgets/long_button.dart';
 import 'package:flutter/material.dart';
@@ -17,66 +17,68 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Row(
+        child: Padding(
+          padding: EdgeInsets.only(
+              left: 24.0.w, right: 24.w, top: 48.h, bottom: 56.h),
+          child: Column(
+            children: [
+              // Icon and exit
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //icon
                   Image.asset('assets/images/black_shop_logo.png'),
-                  const Text(
-                    'Skip',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                  Text(
+                    'Exit',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: neutralBlackText,
+                        fontFamily: 'Inter',
+                        fontSize: 14.sp),
                   )
                 ],
               ),
-            ),
-            const SizedBox(height: 48),
-            //Image
-            Image.asset('assets/images/onboard-three.png'),
-            const SizedBox(height: 56),
-            //Text: Curated products by our professionals.
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Text(
-                "Free shipping and concierge services. ",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: 'Lora',
-                    color: blackDarkText,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 32),
-              ),
-            ),
-            const SizedBox(height: 16),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Text(
-                'No fees, free shipping and amazing customer service. We’ll get you your package within 2 business days no questions asked!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontFamily: 'Inter',
-                    color: neutralBlackText,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16),
-              ),
-            ),
-            // const SizedBox(height: 70),
 
-            // Button
-            const Padding(
-              padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
-              child: Longbutton(
-                  text: 'Next',
-                  textColor: blackDarkText,
-                  color: lightYellow,
-                  screenToNavigateTo: RegistrationFirstPage()),
-            ),
-          ],
+              SizedBox(height: 56.h),
+              //Image
+              Image.asset('assets/images/onboard-three.png'),
+              SizedBox(height: 56.h),
+              //Text: Curated products by our professionals.
+              Column(
+                children: [
+                  Text(
+                    "Free shipping and concierge services. ",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Lora',
+                        color: blackDarkText,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 32.sp),
+                  ),
+
+                  SizedBox(height: 16.sp),
+                  Text(
+                    'No fees, free shipping and amazing customer service. We’ll get you your package within 2 business days no questions asked!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Inter',
+                        color: neutralBlackText,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp),
+                  ),
+
+                  SizedBox(height: 46.h),
+
+                  // Button
+                  const Longbutton(
+                      text: 'Next',
+                      textColor: blackDarkText,
+                      color: lightYellow,
+                      screenToNavigateTo: RegistrationFirstPage()),
+                ],
+              )
+            ],
+          ),
         ),
       )),
     );

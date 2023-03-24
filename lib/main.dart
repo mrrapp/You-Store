@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: const Size(390, 844),
-        minTextAdapt: true,
-        splitScreenMode: true,
+       // minTextAdapt: true,
+       // splitScreenMode: true,
         builder: (context, child) => const MaterialApp(
               home: Intro(),
             ));
