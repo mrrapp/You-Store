@@ -1,3 +1,4 @@
+import 'package:ecom/utilities/color.dart';
 import 'package:flutter/material.dart';
 
 class Longbutton extends StatelessWidget {
@@ -5,7 +6,7 @@ class Longbutton extends StatelessWidget {
       {super.key,
       required this.text,
       required this.color,
-      this.textColor,
+      required this.textColor,
       required this.screenToNavigateTo});
   final Color? textColor;
   final String? text;
@@ -32,8 +33,11 @@ class Longbutton extends StatelessWidget {
           child: Text(
             text!,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w500, fontSize: 16),
+            style: TextStyle(
+                color: textColor,
+                //  color: blackDarkText,
+                fontWeight: FontWeight.w500,
+                fontSize: 16),
           ),
         ),
       ),

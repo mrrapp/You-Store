@@ -18,3 +18,9 @@ const Color chipDarkButton = Color.fromRGBO(54, 57, 57, 1);
 const Color redCard = Color.fromRGBO(226, 189, 191, 1);
 const Color purpleCard = Color.fromRGBO(213, 209, 238, 1);
 const Color blueCard = Color.fromRGBO(193, 211, 229, 1);
+const Color greenCard = Color.fromRGBO(216, 228, 194, 1);
+
+// deals card
+const Color lightGrey = Color.fromRGBO(246, 246, 246, 1);
+//Home my interest colors
+const Color lighYellowtColor = Color.fromRGBO(255, 248, 239, 1);

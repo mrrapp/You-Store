@@ -17,55 +17,58 @@ class _OnboardScreenOneState extends State<OnboardScreenOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                //icon
-                Image.asset('assets/images/black_shop_logo.png'),
-                const Text(
-                  'Skip',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-                )
-              ],
+          child: SingleChildScrollView(
+            child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //icon
+                  Image.asset('assets/images/black_shop_logo.png'),
+                  const Text(
+                    'Skip',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                  )
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 48),
-          Image.asset('assets/images/onboard_one.png'),
-          const SizedBox(height: 56),
-          const Text(
-            """Irrelevant 
-results again?""",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'Habitual sends you relevant items based off of your habits and interests.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: neutralBlackText,
-                fontWeight: FontWeight.w400,
-                fontSize: 16),
-          ),
-          const SizedBox(height: 70),
-
-          //Next Button
-          const Padding(
-            padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
-            child: Longbutton(
-              color: lightDarkBlue,
-              text: 'Next',
-              screenToNavigateTo: OnboardScreenTwo(),
+            const SizedBox(height: 48),
+            Image.asset('assets/images/onboard_one.png'),
+            const SizedBox(height: 56),
+            const Text(
+              """Irrelevant 
+          results again?""",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
             ),
-          )
-        ],
-      )),
+            const SizedBox(height: 16),
+            const Text(
+              'Habitual sends you relevant items based off of your habits and interests.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: neutralBlackText,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16),
+            ),
+            const SizedBox(height: 70),
+          
+            //Next Button
+            const Padding(
+              padding: EdgeInsets.only(left: 24.0, right: 24, bottom: 50),
+              child: Longbutton(
+                color: lightDarkBlue,
+                textColor: white,
+                text: 'Next',
+                screenToNavigateTo: OnboardScreenTwo(),
+              ),
+            )
+                  ],
+                ),
+          )),
     );
   }
 }

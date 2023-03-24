@@ -11,6 +11,8 @@ class InterestCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
+        width: 208,
+        height: 270,
         decoration: BoxDecoration(
             color: color, borderRadius: BorderRadius.circular(10)),
         child: Column(

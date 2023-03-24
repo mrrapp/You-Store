@@ -16,6 +16,7 @@ class SecondRegistrationPage extends StatefulWidget {
 }
 
 class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
+  bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,31 +83,58 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
             const SizedBox(height: 40),
 
             //Big add photo text
-            const Text(
-              'What do you want to achieve with Habitual?',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 24,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text(
+                'What do you want to achieve with Habitual?',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Lora',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24,
+                ),
               ),
             ),
             const SizedBox(height: 16),
             // small text sentence
-            const Text(
-              """This will help us make a unique experience that is 
-              just for you.""",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: neutralBlackText,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text(
+                """This will help us make a unique experience that is just for you.""",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontFamily: 'Inter',
+                    color: neutralBlackText,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14),
+              ),
             ),
             const SizedBox(height: 40),
             // Chip buttons
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
-                children: const [
+                children: [
+                  // ChoiceChip(
+
+                  //   // labelPadding: EdgeInsets.symmetric(horizontal: 200),
+                  //   padding: EdgeInsets.only(
+                  //       left: 155, right: 155, top: 15, bottom: 15),
+                  //   // selectedColor: blackDarkText,
+                  //   //  disabledColor: Colors.grey.shade700,
+                  //   // surfaceTintColor: Colors.amber,
+                  //   //  selectedShadowColor: Colors.amber,
+                  //   label: Text(
+                  //     'data',
+                  //     //     style: TextStyle(color: white),
+                  //   ),
+                  //   selected: _isSelected,
+                  //   onSelected: (newValue) {
+                  //     setState(() {
+                  //       _isSelected = newValue;
+                  //     });
+                  //   },
+                  // ),
                   LongChipButton(
                     text: 'Discover New Products',
                     color: chipGreyButton,

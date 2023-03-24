@@ -106,22 +106,22 @@ class _ThirdRegistrationPAgeState extends State<ThirdRegistrationPAge> {
                       cardPicture: 'assets/images/book_card.png'),
                   InterestCard(
                     color: redCard,
-                    cardPicture: 'assets/images/fashion_card.png',
+                    cardPicture: 'assets/images/fashion_interest.png',
                   ),
                   InterestCard(
                     color: blueCard,
-                    cardPicture: 'assets/images/car_card.png',
+                    cardPicture: 'assets/images/music_interest.png',
                   ),
                   InterestCard(
                       color: purpleCard,
                       cardPicture: 'assets/images/book_card.png'),
                   InterestCard(
                     color: redCard,
-                    cardPicture: 'assets/images/fashion_card.png',
+                    cardPicture: 'assets/images/fashion_interest.png',
                   ),
                   InterestCard(
                     color: blueCard,
-                    cardPicture: 'assets/images/car_card.png',
+                    cardPicture: 'assets/images/music_interest.png',
                   ),
                 ],
               ),
