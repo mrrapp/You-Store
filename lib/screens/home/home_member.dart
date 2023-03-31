@@ -259,7 +259,7 @@ class _HomeMemberState extends State<HomeMember> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // Deals
+                          // Deal
                           Text(
                             'My Interests',
                             style: TextStyle(
