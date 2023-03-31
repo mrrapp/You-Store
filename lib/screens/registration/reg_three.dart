@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utilities/color.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/interest_card.dart';
 import '../../widgets/short_button.dart';
 import '../splash/splash.dart';
@@ -22,52 +22,53 @@ class _ThirdRegistrationPAgeState extends State<ThirdRegistrationPAge> {
         child: SafeArea(
             child: Column(
           children: [
-            const SizedBox(height: 16),
+             SizedBox(height: 20.h),
             // Row with step 1 and personalization
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Column(
+            Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Step 2: Your Goals
-                      const Text(
-                        'Step 3: Interest',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 14),
-                      ),
-
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Intro(),
-                              ));
-                        },
-                        child: const Text(
-                          'Exit',
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 24.0.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Step 2: Your Goals
+                       Text(
+                          'Step 3: Interest',
                           style: TextStyle(
-                              color: neutralBlackText,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14),
+                              fontWeight: FontWeight.w600, fontSize: 14.sp),
                         ),
-                      )
-                    ],
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Intro(),
+                                ));
+                          },
+                          child:  Text(
+                            'Exit',
+                            style: TextStyle(
+                                color: neutralBlackText,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14.sp),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   // Progress Bar
-                  const SizedBox(height: 10),
+                   SizedBox(height: 10.h),
                   Stack(
-                    children: const [
+                    children:  [
                       // light progress line
                       Divider(
-                        thickness: 4,
-                        color: Color.fromRGBO(234, 234, 234, 1),
+                        thickness: 4.sp,
+                        color:const Color.fromRGBO(234, 234, 234, 1),
                       ),
                       // Dark progress line
                       Divider(
-                        thickness: 4,
+                        thickness: 4.sp,
                         color: blackDarkText,
                         endIndent: 200,
                       ),
@@ -75,25 +76,25 @@ class _ThirdRegistrationPAgeState extends State<ThirdRegistrationPAge> {
                   )
                 ],
               ),
-            ),
+           
 
             // progress bar
-            const SizedBox(height: 40),
+             SizedBox(height: 40.sp),
 
             //Big add photo text
-            const Padding(
+             Padding(
               padding:
-                  EdgeInsets.only(top: 40.0, bottom: 40, left: 24, right: 24),
+                  EdgeInsets.only(top: 40.0.h, bottom: 40.h, left: 24.w, right: 24.w),
               child: Text(
                 'Get started by picking some interests.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 24,
+                  fontSize: 24.sp,
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+             SizedBox(height: 16.h),
 // Sliding card
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -102,24 +103,30 @@ class _ThirdRegistrationPAgeState extends State<ThirdRegistrationPAge> {
                 //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
                   InterestCard(
+                    productTitle: 'Reading',
                       color: purpleCard,
                       cardPicture: 'assets/images/book_card.png'),
                   InterestCard(
+                    productTitle: 'Fashion',
                     color: redCard,
                     cardPicture: 'assets/images/fashion_interest.png',
                   ),
                   InterestCard(
+                    productTitle: 'Music',
                     color: blueCard,
                     cardPicture: 'assets/images/music_interest.png',
                   ),
                   InterestCard(
+                    productTitle: 'Reading',
                       color: purpleCard,
                       cardPicture: 'assets/images/book_card.png'),
                   InterestCard(
+                    productTitle: 'Fashion',
                     color: redCard,
                     cardPicture: 'assets/images/fashion_interest.png',
                   ),
                   InterestCard(
+                    productTitle: 'Music',
                     color: blueCard,
                     cardPicture: 'assets/images/music_interest.png',
                   ),
@@ -127,26 +134,26 @@ class _ThirdRegistrationPAgeState extends State<ThirdRegistrationPAge> {
               ),
             ),
 
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 24.0, right: 24.0, top: 237.0, bottom: 55),
+              padding:  EdgeInsets.only(
+                  left: 24.0.w, right: 24.0.w, top: 120.0.h, bottom: 55.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children:  [
                   // Skip text
                   Text(
                     'Skip',
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         color: neutralBlackText),
                   ),
 
                   // Continue Button
-                  ShortButton(
+                 const ShortButton(
                       text: 'Continue',
                       color: lightDarkBlue,
                       buttonIcon: Icons.arrow_right,

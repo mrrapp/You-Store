@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utilities/color.dart';
 
 class InterestCheckBox extends StatefulWidget {
@@ -22,7 +22,7 @@ class _InterestCheckBoxState extends State<InterestCheckBox> {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.only(top: 11.0, bottom: 11, left: 24, right: 24),
+           EdgeInsets.only(top: 11.0.h, bottom: 11.h, left: 24.w, right: 24.w),
       child:
           // Interest CheckBox
           Row(
@@ -32,9 +32,9 @@ class _InterestCheckBoxState extends State<InterestCheckBox> {
           Text(
             // life saver code line below
             widget.interest,
-            style: const TextStyle(
+            style:  TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize: 14,
+                fontSize: 14.sp,
                 color: lightDarkBlue),
           ),
 

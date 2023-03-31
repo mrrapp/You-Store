@@ -1,2 +1,4 @@
 # You-Store
-Building the UI of the ecommerce app as my first project, while learning flutter.
+
+This is a project that focuses in its first stage to build the UI of an ecommerce mobile application.
+

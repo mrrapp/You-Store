@@ -1,7 +1,7 @@
 import 'package:ecom/screens/splash/splash.dart';
 import 'package:ecom/widgets/short_button.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../utilities/color.dart';
 import 'reg_two.dart';
 
@@ -17,57 +17,63 @@ class _RegistrationFirstPageState extends State<RegistrationFirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: ListView(
           children: [
-            const SizedBox(height: 16),
+            SizedBox(height: 20.h,),
             // Row with step 1 and personalization
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child:
+            
                   // Title and progress bar
                   Column(
-                children: [
-                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Step 2: Your Goals
-                      const Text(
-                        'Step 1: Personalization ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 14),
-                      ),
-
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Intro(),
-                              ));
-                        },
-                        child: const Text(
-                          'Exit',
+                    // parent column above
+                    
+                children: [
+                  Column(children: [Padding(
+                    padding:  EdgeInsets.symmetric(horizontal:24.0.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Step 2: Your Goals
+                        Text(
+                          'Step 1: Personalization ',
                           style: TextStyle(
-                              color: neutralBlackText,
+                              fontFamily: 'Inter',
+                              color: blackDarkText,
                               fontWeight: FontWeight.w500,
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         ),
-                      )
-                    ],
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Intro(),
+                                ));
+                          },
+                          child: Text(
+                            'Exit',
+                            style: TextStyle(
+                                color: neutralBlackText,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 14.sp),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   // Progress Bar
-                  const SizedBox(height: 10),
+                  SizedBox(height: 12.h),
                   Stack(
-                    children: const [
+                    children: [
                       // light progress line
                       Divider(
-                        thickness: 4,
-                        color: Color.fromRGBO(234, 234, 234, 1),
+                        thickness: 4.sp,
+                        color: const Color.fromRGBO(234, 234, 234, 1),
                       ),
                       // Dark progress line
                       Divider(
-                        thickness: 4,
+                        thickness: 4.sp,
                         color: blackDarkText,
                         endIndent: 350,
                       ),
@@ -75,52 +81,67 @@ class _RegistrationFirstPageState extends State<RegistrationFirstPage> {
                   )
                 ],
               ),
-            ),
+            
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
 // Column for body
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //Big add photo text
-                const Text(
+                Text(
                   'Add a photo.',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+                  style: TextStyle(
+                      color: blackDarkText,
+                      fontFamily: 'Lora',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24.sp),
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 // small text sentence
-                const Text(
+                Text(
                   """Add a photo so other members 
 know who you are.""",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: neutralBlackText,
+                      fontFamily: 'Inter',
                       fontWeight: FontWeight.w400,
-                      fontSize: 14),
+                      fontSize: 14.sp),
                 ),
-                const SizedBox(height: 40),
+                SizedBox(height: 40.h),
                 // Photo icon
-                Image.asset('assets/images/user_icon.png'),
+                SizedBox(
+                    child: Padding(
+                  padding: EdgeInsets.all(20.0.sp),
+                  child: Image.asset(
+                    'assets/images/user_icon.png',
+                  ),
+                )),],),
+                  
+
+                SizedBox(height: 300.h),
                 // Bottom Row
 
                 Padding(
-                  padding: const EdgeInsets.only(
-                      left: 24.0, right: 24.0, top: 0.0, bottom: 55),
+                  padding: EdgeInsets.only(
+                      left: 24.0.w, right: 24.0.w, top: 0.0.h, bottom: 55.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
+                    children: [
                       // Skip text
                       Text(
                         'Skip',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                             color: neutralBlackText),
                       ),
 
                       // Upload Photo Button
-                      ShortButton(
+                      const ShortButton(
                           text: 'Upload photo',
                           color: lightDarkBlue,
                           pageToNavigateTo: SecondRegistrationPage()),

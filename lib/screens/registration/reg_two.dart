@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:ecom/widgets/long_chip_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utilities/color.dart';
 import '../../widgets/short_button.dart';
@@ -23,21 +24,24 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 16),
-            // Row with step 1 and personalization
+            // Parent column above
+            Column(children: [ // Row with step 1 and personalization
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: EdgeInsets.only(top: 20.h),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       // Step 2: Your Goals
-                      const Text(
+                      Text(
                         'Step 2: Your Goals ',
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 14),
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.sp),
                       ),
 
                       GestureDetector(
@@ -48,28 +52,29 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
                                 builder: (context) => const Intro(),
                               ));
                         },
-                        child: const Text(
+                        child: Text(
                           'Exit',
                           style: TextStyle(
+                              fontFamily: 'Inter',
                               color: neutralBlackText,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14),
+                              fontWeight: FontWeight.w300,
+                              fontSize: 14.sp),
                         ),
                       )
                     ],
                   ),
                   // Progress Bar
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Stack(
-                    children: const [
+                    children: [
                       // light progress line
                       Divider(
-                        thickness: 4,
-                        color: Color.fromRGBO(234, 234, 234, 1),
+                        thickness: 4.sp,
+                        color: const Color.fromRGBO(234, 234, 234, 1),
                       ),
                       // Dark progress line
                       Divider(
-                        thickness: 4,
+                        thickness: 4.sp,
                         color: blackDarkText,
                         endIndent: 280,
                       ),
@@ -80,25 +85,26 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
             ),
 
             // progress bar
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
 
             //Big add photo text
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w),
               child: Text(
                 'What do you want to achieve with Habitual?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Lora',
+                  color: blackDarkText,
                   fontWeight: FontWeight.w600,
-                  fontSize: 24,
+                  fontSize: 24.sp,
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             // small text sentence
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w),
               child: Text(
                 """This will help us make a unique experience that is just for you.""",
                 textAlign: TextAlign.center,
@@ -106,35 +112,16 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
                     fontFamily: 'Inter',
                     color: neutralBlackText,
                     fontWeight: FontWeight.w400,
-                    fontSize: 14),
+                    fontSize: 14.sp),
               ),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             // Chip buttons
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w),
               child: Column(
-                children: [
-                  // ChoiceChip(
-
-                  //   // labelPadding: EdgeInsets.symmetric(horizontal: 200),
-                  //   padding: EdgeInsets.only(
-                  //       left: 155, right: 155, top: 15, bottom: 15),
-                  //   // selectedColor: blackDarkText,
-                  //   //  disabledColor: Colors.grey.shade700,
-                  //   // surfaceTintColor: Colors.amber,
-                  //   //  selectedShadowColor: Colors.amber,
-                  //   label: Text(
-                  //     'data',
-                  //     //     style: TextStyle(color: white),
-                  //   ),
-                  //   selected: _isSelected,
-                  //   onSelected: (newValue) {
-                  //     setState(() {
-                  //       _isSelected = newValue;
-                  //     });
-                  //   },
-                  // ),
+                children: const [
+                 
                   LongChipButton(
                     text: 'Discover New Products',
                     color: chipGreyButton,
@@ -157,25 +144,32 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
                   )
                 ],
               ),
+            ),],),
+           
+            SizedBox(
+              height: 100.h,
             ),
+
+            // bottom Row with the skip action text and the continue button
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 24.0, right: 24.0, top: 300.0, bottom: 55),
+              padding: EdgeInsets.only(
+                  left: 24.0.w, right: 24.0.w, top: 0.0.h, bottom: 55.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   // Skip text
                   Text(
                     'Skip',
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
+                        fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         color: neutralBlackText),
                   ),
 
                   // Continue Button
-                  ShortButton(
+                  const ShortButton(
                       text: 'Continue',
                       color: lightDarkBlue,
                       buttonIcon: Icons.arrow_right,

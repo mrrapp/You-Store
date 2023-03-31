@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LongChipButton extends StatelessWidget {
   const LongChipButton(
@@ -15,20 +16,22 @@ class LongChipButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 0.0, bottom: 15),
+      padding: EdgeInsets.only(top: 0.0.h, bottom: 15.h),
       child: GestureDetector(
         child: Container(
-          height: 48,
+          height: 48.h,
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100), color: color),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 15.0, bottom: 15),
+              borderRadius: BorderRadius.circular(100.r), color: color),
+          child: Center(
             child: Text(
               text!,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: textColor, fontSize: 14, fontWeight: FontWeight.w500),
+                  fontFamily: 'Inter',
+                  color: textColor,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500),
             ),
           ),
         ),

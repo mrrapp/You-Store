@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../utilities/color.dart';
 import '../../widgets/interest_checkbox.dart';
 import '../../widgets/short_button.dart';
@@ -22,52 +22,53 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 16),
+            SizedBox(height: 20.h),
             // Row with step 1 and personalization
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Column(
+             Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Step 2: Your Goals
-                      const Text(
-                        'Step 4: Interest Details ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 14),
-                      ),
-
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Intro(),
-                              ));
-                        },
-                        child: const Text(
-                          'Exit',
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 24.0.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Step 2: Your Goals
+                         Text(
+                          'Step 4: Interest Details ',
                           style: TextStyle(
-                              color: neutralBlackText,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14),
+                              fontWeight: FontWeight.w600, fontSize: 14.sp),
                         ),
-                      )
-                    ],
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Intro(),
+                                ));
+                          },
+                          child:  Text(
+                            'Exit',
+                            style: TextStyle(
+                                color: neutralBlackText,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14.sp),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   // Progress Bar
-                  const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
                   Stack(
-                    children: const [
+                    children:  [
                       // light progress line
                       Divider(
-                        thickness: 4,
-                        color: Color.fromRGBO(234, 234, 234, 1),
+                        thickness: 4.sp,
+                        color:const Color.fromRGBO(234, 234, 234, 1),
                       ),
                       // Dark progress line
                       Divider(
-                        thickness: 4,
+                        thickness: 4.sp,
                         color: blackDarkText,
                         endIndent: 65,
                       ),
@@ -75,149 +76,149 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
                   )
                 ],
               ),
-            ),
+           
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             Column(
-              children: const [
+              children:  [
 //Big add photo text
                 Text(
                   'Let\'s dig deeper!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 24,
+                    fontSize: 24.sp,
                   ),
                 ),
-                SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 // small text sentence
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 24.0.w),
                   child: Text(
                     """We have some recommended options for the interests that you have chosen.""",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: neutralBlackText,
                         fontWeight: FontWeight.w400,
-                        fontSize: 14),
+                        fontSize: 14.sp),
                   ),
                 ),
               ],
             ),
 
-            const SizedBox(height: 40),
+             SizedBox(height: 40.h),
 
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 //Title: Music Interest Check list
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 24.0.w),
                   child: Text("Music",
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: blackDarkText,
                           fontWeight: FontWeight.w600,
-                          fontSize: 18)),
+                          fontSize: 18.sp)),
                 ),
 
                 // Check list Music
 
-                InterestCheckBox(interest: 'Vinyl'),
-                InterestCheckBox(interest: 'Live Music'),
-                InterestCheckBox(interest: 'Hip Hop'),
-                InterestCheckBox(interest: 'Instruments'),
+              const InterestCheckBox(interest: 'Vinyl'),
+              const  InterestCheckBox(interest: 'Live Music'),
+              const  InterestCheckBox(interest: 'Hip Hop'),
+              const  InterestCheckBox(interest: 'Instruments'),
                 Padding(
-                  padding: EdgeInsets.only(top: 16.0, left: 24, right: 24),
+                  padding: EdgeInsets.only(top: 16.0.h, left: 24.w, right: 24.w),
                   child: Text(
                     'See all 24 options',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         color: blackDarkText),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 24),
+             SizedBox(height: 24.h),
             // Horizontal Bar
-            const Divider(
+           Divider(
               color: Colors.black,
               height: 1,
-              thickness: 1,
+              thickness: 1.sp,
               indent: 24,
               endIndent: 24,
             ),
-            const SizedBox(height: 24),
+        SizedBox(height: 24.h),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 //Title: Music Interest Check list
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 24.0.w),
                   child: Text("Fashion",
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: blackDarkText,
                           fontWeight: FontWeight.w600,
-                          fontSize: 18)),
+                          fontSize: 18.sp)),
                 ),
 
                 // Check list Music
 
-                InterestCheckBox(interest: 'Sneakers'),
-                InterestCheckBox(interest: 'Glasses'),
-                InterestCheckBox(interest: 'Dresses'),
-                InterestCheckBox(interest: 'Minimalism'),
+            const  InterestCheckBox(interest: 'Sneakers'),
+            const    InterestCheckBox(interest: 'Glasses'),
+            const    InterestCheckBox(interest: 'Dresses'),
+            const    InterestCheckBox(interest: 'Minimalism'),
                 Padding(
-                  padding: EdgeInsets.only(top: 16.0, left: 24, right: 24),
+                  padding: EdgeInsets.only(top: 16.0.h, left: 24.w, right: 24.w),
                   child: Text(
                     'See all 24 options',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         color: blackDarkText),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 24),
+             SizedBox(height: 24.h),
             // Horizontal Bar
-            const Divider(
+             Divider(
               color: Colors.black,
               height: 1,
-              thickness: 1,
+              thickness: 1.sp,
               indent: 24,
               endIndent: 24,
             ),
-            const SizedBox(height: 24),
+             SizedBox(height: 24.h),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 //Title: Music Interest Check list
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(horizontal: 24.0.w),
                   child: Text("Gaming",
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: blackDarkText,
                           fontWeight: FontWeight.w600,
-                          fontSize: 18)),
+                          fontSize: 18.sp)),
                 ),
 
                 // Check list Music
 
-                InterestCheckBox(interest: 'Playastation'),
-                InterestCheckBox(interest: 'Xbox'),
-                InterestCheckBox(interest: 'PC'),
-                InterestCheckBox(interest: 'RPG\'s'),
+              const  InterestCheckBox(interest: 'Playastation'),
+             const   InterestCheckBox(interest: 'Xbox'),
+             const   InterestCheckBox(interest: 'PC'),
+            const    InterestCheckBox(interest: 'RPG\'s'),
                 Padding(
-                  padding: EdgeInsets.only(top: 16.0, left: 24, right: 24),
+                  padding: EdgeInsets.only(top: 16.0.h, left: 24.w, right: 24.w),
                   child: Text(
                     'See all 24 options',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         color: blackDarkText),
                   ),
                 ),
@@ -225,23 +226,23 @@ class _FourthRegistrationPageState extends State<FourthRegistrationPage> {
             ),
 // Bottom Section
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 24.0, right: 24.0, top: 56.0, bottom: 55),
+              padding:  EdgeInsets.only(
+                  left: 24.0.w, right: 24.0.w, top: 56.0.h, bottom: 55.h),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children:  [
                   // Skip text
                   Text(
                     'Skip',
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         color: neutralBlackText),
                   ),
 
                   // Continue Button
-                  ShortButton(
+                const  ShortButton(
                       text: 'Continue',
                       color: lightDarkBlue,
                       buttonIcon: Icons.arrow_right,

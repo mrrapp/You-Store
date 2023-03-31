@@ -49,12 +49,12 @@ class _IntroState extends State<Intro> {
               left: 24.w,
               top: 272.h,
               width: 342.w,
-              height: 150.h,
+              // height: 150.h,
               child: Text(
                 """Welcome to the world’s largest you store.""",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                     fontSize: 40.sp,
                     fontFamily: 'Lora'),
               ),

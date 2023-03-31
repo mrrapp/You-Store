@@ -19,7 +19,7 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
           child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
-              left: 24.0.w, right: 24.w, top: 48.h, bottom: 56.h),
+              left: 24.0.w, right: 24.w, top: 20.h, bottom: 56.h),
           child: Column(
             children: [
               // Icon and exit
@@ -45,8 +45,10 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
               SizedBox(height: 56.h),
               //Text: Curated products by our professionals.
               Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  // free shipping services
+                  Column(children: [Text(
                     "Free shipping and concierge services. ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -65,9 +67,10 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
                         color: neutralBlackText,
                         fontWeight: FontWeight.w400,
                         fontSize: 16.sp),
-                  ),
+                  ),],),
+                  
 
-                  SizedBox(height: 46.h),
+                  SizedBox(height: 70.h),
 
                   // Button
                   const Longbutton(

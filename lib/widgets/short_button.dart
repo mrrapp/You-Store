@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ShortButton extends StatelessWidget {
   const ShortButton(
@@ -21,32 +22,33 @@ class ShortButton extends StatelessWidget {
             builder: (context) => pageToNavigateTo!,
           )),
       child: Container(
-        height: 48,
-        width: 163,
+        height: 48.h,
+        width: 163.w,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(6.r),
         ),
-        child: Padding(
-            padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
-            child: Row(
-              //  crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  text!,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16),
-                ),
-                Icon(
-                  buttonIcon,
-                  color: Colors.white,
-                ),
-              ],
-            )),
+        child: Row(
+          //  crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Text(
+                text!,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontFamily: 'Inter',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp),
+              ),
+            ),
+            Icon(
+              buttonIcon,
+              color: Colors.white,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utilities/color.dart';
 
 class DealCards extends StatelessWidget {
@@ -17,65 +17,82 @@ class DealCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16.0),
+      padding: EdgeInsets.only(right: 16.0.w),
+      // main contain for cards
       child: Container(
-        height: 218,
-        width: 163,
+        height: 218.h,
+        width: 163.w,
         decoration: BoxDecoration(
-            color: lightGrey, borderRadius: BorderRadius.circular(10)),
-        child: Column(children: [
-          // Heart Icon
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0, top: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [Image.asset('assets/icons/heart.png')],
-            ),
-          ),
-          // Image Column
-          Column(
-            children: [Image.asset(dealImage)],
-          ),
-          // column for text
-          Column(
+            color: lightGrey, borderRadius: BorderRadius.circular(10.r)),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // name
-              Text(
-                productName,
-                style: const TextStyle(
-                    fontFamily: 'Lora',
-                    color: blackDarkText,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14),
-              ),
-              const SizedBox(height: 4),
-              // star
+              // Heart Icon
               Padding(
-                padding: const EdgeInsets.only(left: 12.0),
+                padding: EdgeInsets.only(right: 12.0.w, top: 12.h),
                 child: Row(
-                  children: [
-                    // star icon
-                    const Icon(Icons.star),
-                    const SizedBox(width: 4),
-                    Text(starRating),
-                  ],
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [Image.asset('assets/icons/heart.png')],
                 ),
               ),
-              const SizedBox(height: 5.5),
-              //price
+              // Here is the product Image Column, for the deals segment on the homepage
               Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 4.0),
-                    child: Text('\$$price'),
-                  ),
-                ],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Image.asset(dealImage)],
               ),
-            ],
-          )
-        ]),
+              // column for all card text and star rating
+              Padding(
+                padding: EdgeInsets.only(left: 12.0.w, right: 12.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Here goes the card product name
+                    Text(
+                      productName,
+                      style: TextStyle(
+                          fontFamily: 'Lora',
+                          color: blackDarkText,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14.sp),
+                    ),
+                    SizedBox(height: 4.h),
+                    // Row carrying the star rating icon
+                    Row(
+                      children: [
+                        // star icon
+                        const Icon(Icons.star),
+                        SizedBox(width: 4.w),
+                        Text(
+                          starRating,
+                          style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: 5.5.h),
+                    // Here goes the card product price
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 16.0.h),
+                          child: Text(
+                            '\$$price',
+                            style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Inter'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ]),
       ),
     );
   }

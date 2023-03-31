@@ -20,7 +20,7 @@ class _OnboardScreenOneState extends State<OnboardScreenOne> {
           child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.only(
-              top: 48.0.h, left: 24.w, right: 24.w, bottom: 56.h),
+              top: 20.0.h, left: 24.w, right: 24.w, bottom: 56.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -43,9 +43,10 @@ class _OnboardScreenOneState extends State<OnboardScreenOne> {
               Image.asset('assets/images/onboard_one.png'),
               SizedBox(height: 56.h),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               
                 children: [
-                  Center(
+                  Column(children: [Center(
                     child: Text(
                       """Irrelevant results again?""",
                       textAlign: TextAlign.center,
@@ -64,7 +65,8 @@ class _OnboardScreenOneState extends State<OnboardScreenOne> {
                         color: neutralBlackText,
                         fontWeight: FontWeight.w400,
                         fontSize: 16.sp),
-                  ),
+                  ),],),
+                  
                   SizedBox(height: 70.h),
 
                   //Next Button

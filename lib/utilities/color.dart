@@ -4,6 +4,7 @@ const Color lightYellow = Color.fromRGBO(255, 227, 147, 1);
 const Color lightDarkBlue = Color.fromRGBO(54, 57, 57, 1);
 const Color white = Colors.white;
 const Color neutralBlackText = Color.fromRGBO(121, 122, 123, 1);
+const Color veryLightGrey = Color.fromRGBO(234, 234, 234, 1);
 // Text colors
 const Color blackDarkText = Color.fromRGBO(54, 57, 57, 1);
 const Color blackMediumDarkText = Color.fromRGBO(87, 89, 90, 1);

@@ -1,7 +1,7 @@
 import 'package:ecom/screens/home/home_member.dart';
 import 'package:ecom/widgets/long_button.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utilities/color.dart';
 
 class MyInterestListTile extends StatelessWidget {
@@ -16,12 +16,13 @@ class MyInterestListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding: EdgeInsets.only(top: 8.0.h),
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 8.0),
+            padding: EdgeInsets.only(top: 8.0.h),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // image of product
 
@@ -34,31 +35,31 @@ class MyInterestListTile extends StatelessWidget {
                     // Product name
                     Text(
                       productName,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontFamily: 'Lora',
                           color: blackDarkText,
                           fontWeight: FontWeight.w600,
-                          fontSize: 14),
+                          fontSize: 14.sp),
                     ),
                     Text(
                       productBrandName,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontFamily: 'Inter',
                           color: neutralBlackText,
                           fontWeight: FontWeight.w400,
-                          fontSize: 12),
+                          fontSize: 12.sp),
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: 4.h),
                     //Column of price
                     Column(
                       children: [
                         Text(
                           '\$$price',
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontFamily: 'Lora',
                               color: blackDarkText,
                               fontWeight: FontWeight.w500,
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         )
                       ],
                     )
@@ -67,7 +68,6 @@ class MyInterestListTile extends StatelessWidget {
               ],
             ),
           ),
-          
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:ecom/utilities/color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Longbutton extends StatelessWidget {
   const Longbutton(
@@ -24,12 +25,11 @@ class Longbutton extends StatelessWidget {
             ));
       },
       child: Container(
-        height: 48,
+        height: 48.h,
         width: double.infinity,
-        decoration:
-            BoxDecoration(color: color, borderRadius: BorderRadius.circular(6)),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 16, bottom: 16),
+        decoration: BoxDecoration(
+            color: color, borderRadius: BorderRadius.circular(6.r)),
+        child: Center(
           child: Text(
             text!,
             textAlign: TextAlign.center,
@@ -37,7 +37,7 @@ class Longbutton extends StatelessWidget {
                 color: textColor,
                 //  color: blackDarkText,
                 fontWeight: FontWeight.w500,
-                fontSize: 16),
+                fontSize: 16.sp),
           ),
         ),
       ),

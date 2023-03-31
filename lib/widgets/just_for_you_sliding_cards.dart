@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utilities/color.dart';
 
 class MainMenuSlidingCard extends StatelessWidget {
@@ -18,12 +18,12 @@ class MainMenuSlidingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16.0),
+      padding: EdgeInsets.only(right: 16.0.w),
       child: Container(
-        width: 206,
-        height: 357,
+        width: 206.w,
+        height: 357.h,
         decoration: BoxDecoration(
-            color: card_Color, borderRadius: BorderRadius.circular(10)),
+            color: card_Color, borderRadius: BorderRadius.circular(10.r)),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,24 +32,28 @@ class MainMenuSlidingCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 24.0),
+                    padding: EdgeInsets.only(right: 24.0.w),
                     child: Image.asset('assets/icons/heart.png'),
                   )
                 ],
               ),
 
               //product image
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0),
-                  child: Image.asset(productImageURL),
+              SizedBox(
+                height: 43,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.0.h),
+                    child: Image.asset(productImageURL),
+                  ),
                 ),
               ),
               // text title and price column
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 16.0, right: 16, bottom: 16),
+                    EdgeInsets.only(left: 16.0.w, right: 16.w, bottom: 16.h),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // product name
                     Column(
@@ -58,33 +62,41 @@ class MainMenuSlidingCard extends StatelessWidget {
                         Text(
                           productName,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              fontSize: 18,
+                          style: TextStyle(
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w600,
                               color: blackDarkText,
                               fontFamily: 'Lora'),
                         ),
                         Text(
                           productCategory,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'Inter',
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             color: blackMediumDarkText,
                             fontWeight: FontWeight.w400,
                           ),
                         )
                       ],
                     ),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '\$$price',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            fontFamily: 'Inter',
+                            color: blackMediumDarkText,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
-                ),
-              ),
-              Text(
-                '\$$price',
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontFamily: 'Inter',
-                  color: blackMediumDarkText,
-                  fontWeight: FontWeight.w400,
                 ),
               ),
             ]),
