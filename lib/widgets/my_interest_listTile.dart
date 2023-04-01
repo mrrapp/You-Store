@@ -1,5 +1,4 @@
-import 'package:ecom/screens/home/home_member.dart';
-import 'package:ecom/widgets/long_button.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utilities/color.dart';
@@ -18,11 +17,14 @@ class MyInterestListTile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 8.0.h),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        
         children: [
           Padding(
             padding: EdgeInsets.only(top: 8.0.h),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+           //   mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // image of product
 
@@ -30,6 +32,7 @@ class MyInterestListTile extends StatelessWidget {
 
                 // column of product name and brand
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Product name

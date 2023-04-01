@@ -8,6 +8,8 @@ import 'package:ecom/widgets/work_items_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../search/search.dart';
+
 class WishlistMember extends StatefulWidget {
   const WishlistMember({super.key});
 
@@ -68,10 +70,19 @@ class _WishlistMemberState extends State<WishlistMember> {
               ),
             ),
             label: 'Profile'),
-        const BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: neutralBlackText,
+        BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchSreen(),
+                    ));
+              },
+              child: const Icon(
+                Icons.search_outlined,
+                color: neutralBlackText,
+              ),
             ),
             label: 'Search'),
       ]),

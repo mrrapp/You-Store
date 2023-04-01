@@ -74,7 +74,7 @@ class _OnboardScreenThreeState extends State<OnboardScreenThree> {
 
                   // Button
                   const Longbutton(
-                      text: 'Next',
+                      text: 'Sign me up!',
                       textColor: blackDarkText,
                       color: lightYellow,
                       screenToNavigateTo: RegistrationFirstPage()),

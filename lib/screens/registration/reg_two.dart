@@ -32,36 +32,39 @@ class _SecondRegistrationPageState extends State<SecondRegistrationPage> {
               padding: EdgeInsets.only(top: 20.h),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Step 2: Your Goals
-                      Text(
-                        'Step 2: Your Goals ',
-                        style: TextStyle(
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14.sp),
-                      ),
-
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Intro(),
-                              ));
-                        },
-                        child: Text(
-                          'Exit',
+                  Padding(
+                    padding:  EdgeInsets.symmetric( horizontal:24.0.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Step 2: Your Goals
+                        Text(
+                          'Step 2: Your Goals ',
                           style: TextStyle(
                               fontFamily: 'Inter',
-                              color: neutralBlackText,
-                              fontWeight: FontWeight.w300,
+                              fontWeight: FontWeight.w500,
                               fontSize: 14.sp),
                         ),
-                      )
-                    ],
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Intro(),
+                                ));
+                          },
+                          child: Text(
+                            'Exit',
+                            style: TextStyle(
+                                fontFamily: 'Inter',
+                                color: neutralBlackText,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 14.sp),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   // Progress Bar
                   SizedBox(height: 10.h),

@@ -27,14 +27,14 @@ class _OnboardScreenTwoState extends State<OnboardScreenTwo> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     //icon
-                    Image.asset('assets/images/black_shop_logo.png'),
-                    const Text(
+                    Image.asset('assets/images/black_shop_logo.png',),
+                     Text(
                       'Skip',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           color: neutralBlackText,
                           fontFamily: 'Inter',
-                          fontSize: 14),
+                          fontSize: 14.sp),
                     )
                   ],
                 ),

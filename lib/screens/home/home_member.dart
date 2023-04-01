@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/just_for_you_sliding_cards.dart';
 import '../../widgets/long_button.dart';
+import '../search/search.dart';
 
 class HomeMember extends StatefulWidget {
   const HomeMember({super.key});
@@ -45,8 +46,7 @@ class _HomeMemberState extends State<HomeMember> {
               ),
             ),
             backgroundColor: veryLightGrey,
-           label: ''
-            ),
+            label: ''),
         BottomNavigationBarItem(
             icon: InkWell(
               onTap: () {
@@ -59,7 +59,6 @@ class _HomeMemberState extends State<HomeMember> {
                 Icons.favorite_border,
                 color: neutralBlackText,
               ),
-              
             ),
             backgroundColor: neutralBlackText,
             label: 'Wishlist'),
@@ -78,10 +77,19 @@ class _HomeMemberState extends State<HomeMember> {
               ),
             ),
             label: 'Profile'),
-        const BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: neutralBlackText,
+        BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchSreen(),
+                    ));
+              },
+              child: const Icon(
+                Icons.search_outlined,
+                color: neutralBlackText,
+              ),
             ),
             label: 'Search'),
       ]),
@@ -97,7 +105,7 @@ class _HomeMemberState extends State<HomeMember> {
             Padding(
               padding: EdgeInsets.only(top: 38.0.h),
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 24.0.w),
+                padding: EdgeInsets.symmetric(horizontal: 24.0.w),
 
                 // this row carries the app logo and cart icon
                 child: Row(
@@ -113,7 +121,7 @@ class _HomeMemberState extends State<HomeMember> {
               ),
             ),
             SizedBox(height: 32.h),
-             
+
             // Column for:  just for you text and sliding tiles rows
 
             Column(
@@ -297,18 +305,24 @@ class _HomeMemberState extends State<HomeMember> {
                       ),
 
                       // column for list of products with detals
-                      const MyInterestListTile(
-                          price: '1000.00',
-                          productBrandName: 'Apple',
-                          productName: 'Macbook Pro 13"'),
-                      const MyInterestListTile(
-                          price: '79.99',
-                          productBrandName: 'Sony',
-                          productName: 'DualSense Wireless Controller'),
-                      const MyInterestListTile(
-                          price: '2100.45',
-                          productBrandName: 'Dell',
-                          productName: 'Alienware 38” Curved Monitor '),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          MyInterestListTile(
+                              price: '1000.00',
+                              productBrandName: 'Apple',
+                              productName: 'Macbook Pro 13"'),
+                          MyInterestListTile(
+                              price: '79.99',
+                              productBrandName: 'Sony',
+                              productName: 'DualSense Wireless Controller'),
+                          MyInterestListTile(
+                              price: '2100.45',
+                              productBrandName: 'Dell',
+                              productName: 'Alienware 38” Curved Monitor '),
+                        ],
+                      ),
 
                       SizedBox(
                         height: 16.h,
