@@ -24,4 +24,4 @@ const Color greenCard = Color.fromRGBO(216, 228, 194, 1);
 // deals card
 const Color lightGrey = Color.fromRGBO(246, 246, 246, 1);
 //Home my interest colors
-const Color lighYellowtColor = Color.fromRGBO(255, 248, 239, 1);
+const Color lightYellowColor = Color.fromRGBO(255, 248, 239, 1);

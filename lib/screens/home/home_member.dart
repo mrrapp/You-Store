@@ -172,14 +172,14 @@ class _HomeMemberState extends State<HomeMember> {
                           price: '12',
                           card_Color: purpleCard,
                           productCategory: 'Franz Kafla',
-                          productImageURL: 'assets/images/metamorphosis.png',
+                          productImageURL: 'assets/images/mac.png',
                           productName: 'The Metamorphosis',
                         ),
                         MainMenuSlidingCard(
                           price: '12',
                           card_Color: redCard,
                           productCategory: 'Franz Kafla',
-                          productImageURL: 'assets/images/metamorphosis.png',
+                          productImageURL: 'assets/images/productPage/game_pad.png',
                           productName: 'The Metamorphosis',
                         )
                       ],
@@ -258,7 +258,7 @@ class _HomeMemberState extends State<HomeMember> {
             Column(
               children: [
                 Container(
-                  decoration: const BoxDecoration(color: lighYellowtColor),
+                  decoration: const BoxDecoration(color: lightYellowColor),
                   child: Padding(
                     padding: EdgeInsets.all(24.0.sp),
                     child: Column(children: [

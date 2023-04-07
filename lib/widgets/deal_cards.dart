@@ -27,7 +27,7 @@ class DealCards extends StatelessWidget {
               builder: (context) => const ProductPage(),
             )),
         child: Container(
-          height: 218.h,
+         height: 225.h,
           width: 163.w,
           decoration: BoxDecoration(
               color: lightGrey, borderRadius: BorderRadius.circular(10.r)),

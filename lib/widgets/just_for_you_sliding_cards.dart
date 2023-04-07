@@ -24,15 +24,17 @@ class MainMenuSlidingCard extends StatelessWidget {
         height: 357.h,
         decoration: BoxDecoration(
             color: card_Color, borderRadius: BorderRadius.circular(10.r)),
+        // Main column for the container items
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Row for the favorite or love icon at the top right corner
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(right: 24.0.w),
+                    padding: EdgeInsets.only(right: 24.0.w,top:16.h),
                     child: Image.asset('assets/icons/heart.png'),
                   )
                 ],
@@ -40,11 +42,11 @@ class MainMenuSlidingCard extends StatelessWidget {
 
               //product image
               SizedBox(
-                height: 43,
+               // height: 43,
                 child: Center(
                   child: Padding(
                     padding: EdgeInsets.symmetric(vertical: 12.0.h),
-                    child: Image.asset(productImageURL),
+                    child: Image.asset(productImageURL,fit: BoxFit.contain,),
                   ),
                 ),
               ),
@@ -82,16 +84,22 @@ class MainMenuSlidingCard extends StatelessWidget {
                     SizedBox(
                       height: 12.h,
                     ),
+
+                    // the last column for the price of the product on the sliding card
                     Column(
+
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          '\$$price',
-                          style: TextStyle(
-                            fontSize: 12.sp,
-                            fontFamily: 'Inter',
-                            color: blackMediumDarkText,
-                            fontWeight: FontWeight.w400,
+                        Padding(
+                          padding:  EdgeInsets.only(bottom: 16.0.h),
+                          child: Text(
+                            '\$$price',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: 'Inter',
+                              color: blackMediumDarkText,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
                         ),
                       ],

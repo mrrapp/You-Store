@@ -20,24 +20,28 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
-            icon: Padding(
-              padding: EdgeInsets.all(16.0.sp),
-              child:  InkWell(
-                onTap: () {
+          label: 'Home',
+          icon: Padding(
+            padding: EdgeInsets.all(16.0.sp),
+            child: InkWell(
+              onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const HomeMember()));
               },
-                child:const Icon(
-                  Icons.home_outlined,
-                  color: neutralBlackText,
-                ),
+              child: const Icon(
+                Icons.home_outlined,
+                color: neutralBlackText,
               ),
             ),
-            backgroundColor: veryLightGrey,
-            label: 'Home'),
+          ),
+          backgroundColor: veryLightGrey,
+          
+        ),
+        
         BottomNavigationBarItem(
+           label: 'Wishlist',
             icon: InkWell(
               onTap: () {
                 Navigator.push(
@@ -50,8 +54,9 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
                 color: neutralBlackText,
               ),
             ),
-            label: 'Wishlist'),
+           ),
         BottomNavigationBarItem(
+          label: 'Profile',
             icon: InkWell(
               onTap: () {},
               child: const Icon(
@@ -59,8 +64,9 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
                 color: blackDarkText,
               ),
             ),
-            label: 'Profile'),
+            ),
         BottomNavigationBarItem(
+          label: 'Search',
             icon: InkWell(
               onTap: () {
                 Navigator.push(
@@ -74,7 +80,7 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
                 color: neutralBlackText,
               ),
             ),
-            label: 'Search'),
+            ),
       ]),
       body: SafeArea(
           child: Padding(
@@ -100,7 +106,7 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
 
             SizedBox(height: 24.h),
 
-            // Column for user name and bio with the prodfile picture
+            // Column for user name and bio with the profile picture
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,7 +124,7 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Lora'),
                     ),
-                    // User
+                    // User bio
                     Text(
                       """Amet minim mollit non deserunt
                       """,
@@ -151,13 +157,14 @@ class _ProfileActiveOrdersState extends State<ProfileActiveOrders> {
                 ),
 
                 // clipped profile picture
-                Container(
-                  height: 73.h,
-                  width: 73.h,
-                  decoration: BoxDecoration(
-                      color: veryLightGrey,
-                      borderRadius: BorderRadius.circular(100)),
-                ),
+
+                CircleAvatar(
+                  backgroundColor: veryLightGrey,
+              
+                  radius: 50.r,
+                  backgroundImage: AssetImage('assets/images/magazine.png'),
+                )
+               
               ],
             ),
             SizedBox(
