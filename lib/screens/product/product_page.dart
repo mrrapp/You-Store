@@ -1,4 +1,5 @@
 import 'package:ecom/utilities/color.dart';
+import 'package:ecom/widgets/containterProductPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,6 +14,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: white,
       body: SafeArea(
         child: Column(children: [
           //Blue container with the title bar having the back icon button and the cart icon, and also the product image
@@ -31,9 +33,14 @@ class _ProductPageState extends State<ProductPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         // first is the arrow back Icon
-                        Image.asset(
-                          'assets/icons/arrow_left.png',
-                          color: blackDarkText,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Image.asset(
+                            'assets/icons/arrow_left.png',
+                            color: blackDarkText,
+                          ),
                         ),
                         Image.asset(
                           'assets/icons/cart.png',
@@ -143,43 +150,19 @@ class _ProductPageState extends State<ProductPage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 109.h,
-                      width: 163.w,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: lightYellow),
-                          borderRadius: BorderRadius.circular(10.r)),
-                      child: Column(children: [
-                        //Color title
-                        Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(12.sp),
-                            decoration:
-                                 BoxDecoration(color: lightYellowColor),
-                            child: Text(
-                              'Black',
-                              style: TextStyle(
-                                  fontFamily: 'Inter',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600),
-                            )),
-                           Divider(thickness: 1.sp,),
-
-                        // Price and stock availability
-                        Column(children: [
-                          //product price
-                          Text('\$200.0',style: TextStyle(fontFamily: 'Inter',fontSize: 16.sp,),)
-                        ],)
-                      ]),
-                    ),
-                    Container(
-                      height: 109.h,
-                      width: 163.w,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: veryLightGrey),
-                          borderRadius: BorderRadius.circular(10.r)),
-                    ),
+                  children: const [
+                    // Black option container
+                    ContainerInProductPage(
+                        price: '200.99',
+                        productColor: 'Black',
+                        color: lightYellowColor,
+                        containerColor: lightYellow),
+                    // White option container
+                    ContainerInProductPage(
+                        price: '79.99',
+                        productColor: 'White',
+                        color: white,
+                        containerColor: Colors.grey),
                   ],
                 )
               ],
