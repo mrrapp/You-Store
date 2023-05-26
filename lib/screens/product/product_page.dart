@@ -1,7 +1,10 @@
 import 'package:ecom/utilities/color.dart';
 import 'package:ecom/widgets/containterProductPage.dart';
+import 'package:ecom/widgets/short_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'cart_page.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -16,7 +19,7 @@ class _ProductPageState extends State<ProductPage> {
     return Scaffold(
       backgroundColor: white,
       body: SafeArea(
-        child: Column(children: [
+        child: ListView(children: [
           //Blue container with the title bar having the back icon button and the cart icon, and also the product image
           Container(
             width: double.infinity,
@@ -42,11 +45,21 @@ class _ProductPageState extends State<ProductPage> {
                             color: blackDarkText,
                           ),
                         ),
-                        Image.asset(
-                          'assets/icons/cart.png',
-                          color: blackDarkText,
-                          height: 20.h,
-                          width: 20.w,
+                        // cart icon
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Cart(),
+                                ));
+                          },
+                          child: Image.asset(
+                            'assets/icons/cart.png',
+                            color: blackDarkText,
+                            height: 20.h,
+                            width: 20.w,
+                          ),
                         )
                       ],
                     ),
@@ -164,8 +177,53 @@ class _ProductPageState extends State<ProductPage> {
                         color: white,
                         containerColor: Colors.grey),
                   ],
-                )
+                ),
               ],
+            ),
+          ),
+          SizedBox(
+            height: 42.h,
+          ),
+          // Add to cart Row and button
+          Container(
+            width: double.infinity,
+            height: 92.h,
+            decoration: const BoxDecoration(color: lightYellow),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w),
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // column With your options text and product price
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'With your options',
+                          style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: blackDarkText),
+                        ),
+                        Text(
+                          '\$79.99',
+                          style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w600,
+                              color: blackDarkText),
+                        ),
+                      ],
+                    ),
+
+                    // Black add to cart button
+                    const ShortButton(
+                        text: 'Add to cart',
+                        color: blackDarkText,
+                        pageToNavigateTo: ProductPage())
+                  ]),
             ),
           )
         ]),
